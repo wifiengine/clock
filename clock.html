@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lorem</title>
+    <style>
+        body {
+            margin: 0%;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+  <script>
+  var canvas = document.getElementById("canvas");
+var draw = canvas.getContext("2d");
+var t = 0;
+var x = -6;
+var y = -0.1;
+var z = -0.001666666666666666666666666666666666666666666666666666666666;
+var a = -10;
+
+function run(run) {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    t += 1;
+
+    console.log(t);
+
+    x += 6;
+    y += 0.1;
+    z += 0.001666666666666666666666666666666666666666666666666666666666
+
+
+    draw.beginPath();
+    draw.fillRect(400,20,20,90);
+    draw.fillRect(400,530,20,90);
+    draw.fillRect(110,310,90,20);
+    draw.fillRect(620,310,90,20);
+
+    draw.beginPath();
+    draw.strokeStyle = "#00ff00";
+    draw.arc(410,320,300,0,2*Math.PI);
+    draw.stroke();
+    draw.closePath();
+ 
+    draw.beginPath();
+    draw.save();
+    draw.fillStyle = "#00ffff";
+    draw.translate(410,320);
+    draw.rotate(x*Math.PI/180);
+    draw.translate(-410,-320);
+    draw.fillRect(400,20,20,300);
+    draw.fill();
+    draw.restore();
+    draw.closePath();
+
+    draw.beginPath();
+    draw.save();
+    draw.fillStyle = "#ffff00";
+    draw.translate(410,320);
+    draw.rotate(y*Math.PI/180);
+    draw.translate(-410,-320);
+    draw.fillRect(400,40,20,280);
+    draw.fill();
+    draw.restore();
+    draw.closePath();
+
+    draw.beginPath();
+    draw.save();
+    draw.fillStyle = "#5F4BB6";
+    draw.translate(410,320);
+    draw.rotate(z*Math.PI/180);
+    draw.translate(-410,-320);
+    draw.fillRect(400,60,20,260);
+    draw.fill();
+    draw.restore();
+    draw.closePath();
+
+
+    draw.beginPath();
+    draw.fillStyle = "#000000";
+    draw.arc(410,320,20,0,2*Math.PI);
+    draw.fill();
+    draw.closePath();
+
+
+}
+setInterval(run,1000);
+
+
+  </script>
+</body>
+    </html>
